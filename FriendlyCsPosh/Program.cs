@@ -136,7 +136,7 @@ namespace FriendlyCsPosh
       }
 
       if (arguments.ContainsKey("encoded")) {
-        code = System.Convert.FromBase64String(arguments["encoded"]);
+        code = System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(arguments["encoded"]));
       }
 
       if (arguments.ContainsKey("domain")) {
